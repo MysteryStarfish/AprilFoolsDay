@@ -22,6 +22,7 @@
     <button class="pen_button" id="pen_button" onclick="handlePenClick()">Custom Button</button>
     <button class="magicpen_button" id="magicpen_button" onclick="handleMagicClick()">Custom Button</button>
     <button class="eraser_button" id="eraser_button" onclick="handleEraserClick()">Custom Button</button>
+    <button class="star_button" id="star_button" onclick="handleStarClick()">Custom Button</button>
     <div class="hidden" id="starfishGirl_container">
         <img src="../pic/starfishGirl_good.png" class="fixed-image">
         <a href="https://youtu.be/83oHyBpNd-4">
@@ -34,8 +35,18 @@
 
     <script>
         let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+        let star_score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
         let SCORE_THRESHOLD = 4;
+        let SCORE_STINGRAY = 5;
         // JavaScript
+
+        function handleStarClick() {
+            star_score++;
+            if (star_score >= SCORE_STINGRAY){
+                window.location.href = "page1.html";
+            }
+        }
+
         function handleClick() {
             // 在这里编写按钮点击时要执行的代码
             score++; // 每点击一次按钮，分数加一
@@ -75,6 +86,7 @@
 
         function checkScore() {
             if (score >= SCORE_THRESHOLD) {
+                document.getElementById('starfishGirl_container').classList.remove('hidden');
                 localStorage.setItem('starfishGirl_containerHidden', false);
             }
         }

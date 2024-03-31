@@ -58,6 +58,16 @@ li{
 
 }
 
+.stringrayBackGround {
+    background-color: #ffc3c344;
+    background-image: url("../pic/stringray.png");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center 0pt;
+    background-size: 700px 700px;
+
+}
+
 .logoBackGround{
     background-color: #ffc3c3;
     background-image: url("../pic/logo.png");
@@ -191,6 +201,19 @@ li{
 }
 .starfishGirl_button:hover {
     cursor: grab;
+}
+
+.star_button {
+    position: absolute; /* 或者 relative, fixed */
+    top: 120px;
+    left: 450px;
+    width: 450px; /* 设置按钮宽度 */
+    height: 370px; /* 设置按钮高度 */
+    opacity: 0; /* 设置按钮透明度为 0，使其不可见 */
+    /* pointer-events: none;  禁用按钮的指针事件，使其不响应鼠标事件 */
+}
+.star_button:hover {
+    cursor: no-drop;
 }
 
 .hidden {
