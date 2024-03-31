@@ -24,9 +24,7 @@
     <button class="star_button" id="star_button" onclick="handleStarClick()">Custom Button</button>
     <div class="hidden" id="starfishGirl_container">
         <img src="./pic/starfishGirl_good.png" class="fixed-image">
-        <a herf="https://youtu.be/83oHyBpNd-4">
-            <button class="starfishGirl_button" id="starfishGirl_button" onclick="reset()">Custom Button</button>
-        </a>
+        <button class="starfishGirl_button" id="starfishGirl_button" onclick="reset()">Custom Button</button>
     </div>
     
     
@@ -96,7 +94,8 @@
             if (localStorage.getItem('starfishGirl_containerHidden') != "false") {
                 document.getElementById('starfishGirl_container').classList.add('hidden'); // 移除隐藏样式类，显示图片
             }
-            // window.open("https://youtu.be/83oHyBpNd-4","rick", config='titlebar=0,scrollbars=0,status=0,menubar=0,toolbar=0');
+            window.open("https://youtu.be/83oHyBpNd-4","rick", config='titlebar=0,scrollbars=0,status=0,menubar=0,toolbar=0');
+            alert("如果點下去什麼都沒有，可以解除彈出視窗封鎖嗎，拜託，我搞這個彩蛋很久");
             window.location.href = "Main.html";
         }
 
