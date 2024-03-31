@@ -75,6 +75,7 @@
 
         function checkScore() {
             if (score >= SCORE_THRESHOLD) {
+                document.getElementById('starfishGirl_container').classList.remove('hidden');
                 localStorage.setItem('starfishGirl_containerHidden', false);
             }
         }
