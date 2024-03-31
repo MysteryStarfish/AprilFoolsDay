@@ -1,26 +1,20 @@
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <link rel="stylesheet" type="text/css" href="./css/backGround.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/title.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/content.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/other.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/media.css"/>
-    <title>真虧你能找到這裡</title>
+  <title>Full Screen Background Image</title>
+  <style>
+    /* CSS */
+    .full {
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg'); /* 设置背景图片的 URL */
+      background-size: cover; /* 将背景图片拉伸以填充整个页面 */
+      background-position: center; /* 将背景图片水平和垂直居中 */
+      background-repeat: no-repeat; /* 禁止背景图片重复 */
+    }
+  </style>
 </head>
-<body class="chinoBackGround">
-    <div id="main">
-        <div id="title">
-            <span class="title">ㄋㄧㄘㄞ</span>
-            
-            <!-- <img class="centerImg" src="./pic/01.png" width="30%"/> -->
-        </div>
-        <div>
-        </div>
-    </div>
-    <a href="https://www.youtube.com/watch?v=MwXdvTf64Is">
-        <button class="bottle_button" onclick="handleClick()">Custom Button</button>
-    </a>
+<body>
+    <img src="../pic/1.png" class="full">
 </body>
 </html>
