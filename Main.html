@@ -78,21 +78,22 @@
             localStorage.setItem('eraser_button_buttonHidden', false);
             localStorage.setItem('starfishGirl_containerHidden', true);
             localStorage.setItem('score', score);
-            if (localStorage.getItem('bottle_button_buttonHidden') == "true") {
-                document.getElementById('bottle_button').classList.add('hidden');
+            if (localStorage.getItem('bottle_button_buttonHidden') != "true") {
+                document.getElementById('bottle_button').classList.remove('hidden');
             }
-            if (localStorage.getItem('pen_button_buttonHidden') == "true") {
-                document.getElementById('pen_button').classList.add('hidden');
+            if (localStorage.getItem('pen_button_buttonHidden') != "true") {
+                document.getElementById('pen_button').classList.remove('hidden');
             }
-            if (localStorage.getItem('magicpen_button_buttonHidden') == "true") {
-                document.getElementById('magicpen_button').classList.add('hidden');
+            if (localStorage.getItem('magicpen_button_buttonHidden') != "true") {
+                document.getElementById('magicpen_button').classList.remove('hidden');
             }
-            if (localStorage.getItem('eraser_button_buttonHidden') == "true") {
-                document.getElementById('eraser_button').classList.add('hidden');
+            if (localStorage.getItem('eraser_button_buttonHidden') != "true") {
+                document.getElementById('eraser_button').classList.remove('hidden');
             }
-            if (localStorage.getItem('starfishGirl_containerHidden') == "false") {
-                document.getElementById('starfishGirl_container').classList.remove('hidden'); // 移除隐藏样式类，显示图片
+            if (localStorage.getItem('starfishGirl_containerHidden') != "false") {
+                document.getElementById('starfishGirl_container').classList.add('hidden'); // 移除隐藏样式类，显示图片
             }
+            window.location.href = "Main.html";
             window.open("https://youtu.be/83oHyBpNd-4","rick", config='titlebar=0,scrollbars=0,status=0,menubar=0,toolbar=0');
         }
 
