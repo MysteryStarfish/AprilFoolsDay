@@ -1,0 +1,44 @@
+#main {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    margin-left: 0px; 
+    padding-left: 1.5em;
+}
+
+li{
+    font-size: 1.3em;
+    margin: 0.75em 0 0 0em;
+}
+
+.contentBackGround{
+    max-width: 32rem;
+    margin: 0 auto;
+    background-color: #93d9ffcd;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+}
+
+.chinoBackGround {
+    background-color: #ffc3c344;
+    background-image: url("../pic/backgroung.png");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center 0pt;
+    background-size: 100% 700%;
+
+}
+
+.logoBackGround{
+    background-color: #ffc3c3;
+    background-image: url("../pic/logo.png");
+    background-repeat: no-repeat;
+    background-position: center 0pt;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <link rel="stylesheet" type="text/css" href="./css/backGround.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/title.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/content.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/other.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/media.css"/>
+    <title>真虧你能找到這裡</title>
+</head>
+<body class="chinoBackGround">
+    <div id="main">
+        <div id="title">
+            <span class="title">ㄨㄛㄏㄨㄚㄋㄧㄘㄞ</span>
+            
+            <!-- <img class="centerImg" src="./pic/01.png" width="30%"/> -->
+        </div>
+        <div>
+        </div>
+    </div>
+    <button class="bottle_button" id="bottle_button" onclick="handleBottleClick()">Custom Button</button>
+    <button class="pen_button" id="pen_button" onclick="handlePenClick()">Custom Button</button>
+    <button class="magicpen_button" id="magicpen_button" onclick="handleMagicClick()">Custom Button</button>
+    <button class="eraser_button" id="eraser_button" onclick="handleEraserClick()">Custom Button</button>
+    <div class="hidden" id="starfishGirl_container">
+        <img src="../pic/starfishGirl.png" class="fixed-image">
+        <a href="https://youtu.be/83oHyBpNd-4">
+            <button class="starfishGirl_button" id="starfishGirl_button" onclick="reset()">Custom Button</button>
+        </a>
+        
+    </div>
+    
+    
+
+    <script>
+        let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+        let SCORE_THRESHOLD = 4;
+        // JavaScript
+        function handleClick() {
+            // 在这里编写按钮点击时要执行的代码
+            score++; // 每点击一次按钮，分数加一
+            switch(score) {
+                case 1:
+                    window.location.href = "page1.html"; // 当分数为1时跳转到page1.html
+                    break;
+                case 2:
+                    window.location.href = "page2.html"; // 当分数为2时跳转到page2.html
+                    break;
+                case 3:
+                    window.location.href = "page3.html"; // 当分数为2时跳转到page2.html
+                    break;
+                case 4:
+                    window.location.href = "page4.html"; // 当分数为2时跳转到page2.html
+                    break;
+                case 5:
+                    break;
+                // 可根据需要添加更多分数对应的页面跳转
+                default:
+                    score = 0;
+                    break;
+            }
+            localStorage.setItem('score', score); // 更新本地存储中的分数
+            checkScore();
+        }
+
+        function reset(){
+            score = 0;
+            localStorage.setItem('bottle_button_buttonHidden', false);
+            localStorage.setItem('pen_button_buttonHidden', false);
+            localStorage.setItem('magicpen_button_buttonHidden', false);
+            localStorage.setItem('eraser_button_buttonHidden', false);
+            localStorage.setItem('starfishGirl_containerHidden', true);
+            localStorage.setItem('score', score);
+        }
+
+        function checkScore() {
+            if (score >= SCORE_THRESHOLD) {
+                localStorage.setItem('starfishGirl_containerHidden', false);
+            }
+        }
+
+        function handleBottleClick() {
+            handleClick();
+            hideButton("bottle_button"); // 隐藏按钮
+        }
+        function handlePenClick() {
+            handleClick();
+            hideButton("pen_button"); // 隐藏按钮
+        }
+        function handleMagicClick() {
+            handleClick();
+            hideButton("magicpen_button"); // 隐藏按钮
+        }
+        function handleEraserClick() {
+            handleClick();
+            hideButton("eraser_button"); // 隐藏按钮
+        }
+
+        function hideButton(id) {
+            // alert(id);
+            document.getElementById(id).classList.add('hidden'); // 添加隐藏样式类
+            localStorage.setItem(id + '_buttonHidden', true);
+        }
+
+        if (localStorage.getItem('bottle_button_buttonHidden') == "true") {
+            document.getElementById('bottle_button').classList.add('hidden');
+        }
+        if (localStorage.getItem('pen_button_buttonHidden') == "true") {
+            document.getElementById('pen_button').classList.add('hidden');
+        }
+        if (localStorage.getItem('magicpen_button_buttonHidden') == "true") {
+            document.getElementById('magicpen_button').classList.add('hidden');
+        }
+        if (localStorage.getItem('eraser_button_buttonHidden') == "true") {
+            document.getElementById('eraser_button').classList.add('hidden');
+        }
+        if (localStorage.getItem('starfishGirl_containerHidden') == "false") {
+            document.getElementById('starfishGirl_container').classList.remove('hidden'); // 移除隐藏样式类，显示图片
+        }
+    </script>
+</body>
+</html>
