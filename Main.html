@@ -25,10 +25,7 @@
     <button class="star_button" id="star_button" onclick="handleStarClick()">Custom Button</button>
     <div class="hidden" id="starfishGirl_container">
         <img src="./pic/starfishGirl_good.png" class="fixed-image">
-        <a href="https://youtu.be/83oHyBpNd-4">
-            <button class="starfishGirl_button" id="starfishGirl_button" onclick="reset()">Custom Button</button>
-        </a>
-        
+        <button class="starfishGirl_button" id="starfishGirl_button" onclick="reset()">Custom Button</button>
     </div>
     
     
@@ -82,6 +79,22 @@
             localStorage.setItem('eraser_button_buttonHidden', false);
             localStorage.setItem('starfishGirl_containerHidden', true);
             localStorage.setItem('score', score);
+            if (localStorage.getItem('bottle_button_buttonHidden') == "true") {
+                document.getElementById('bottle_button').classList.add('hidden');
+            }
+            if (localStorage.getItem('pen_button_buttonHidden') == "true") {
+                document.getElementById('pen_button').classList.add('hidden');
+            }
+            if (localStorage.getItem('magicpen_button_buttonHidden') == "true") {
+                document.getElementById('magicpen_button').classList.add('hidden');
+            }
+            if (localStorage.getItem('eraser_button_buttonHidden') == "true") {
+                document.getElementById('eraser_button').classList.add('hidden');
+            }
+            if (localStorage.getItem('starfishGirl_containerHidden') == "false") {
+                document.getElementById('starfishGirl_container').classList.remove('hidden'); // 移除隐藏样式类，显示图片
+            }
+            window.open("https://youtu.be/83oHyBpNd-4","rick", config='titlebar=0,scrollbars=0,status=0,menubar=0,toolbar=0');
         }
 
         function checkScore() {
